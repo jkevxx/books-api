@@ -17,7 +17,11 @@ func New(s store.Store) *Service {
 }
 
 func (s *Service) GetAllBooks() ([]*model.Book, error) {
-	return s.store.GetAll()
+	books, err := s.store.GetAll()
+	if err != nil {
+		return nil, err
+	}
+	return books, nil
 }
 
 func (s *Service) GetBookById(id int) (*model.Book, error) {
