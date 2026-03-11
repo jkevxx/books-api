@@ -53,7 +53,7 @@ func (h *BookHandler) HandleBooks(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (h *BookHandler) handleBookByID(w http.ResponseWriter, r *http.Request) {
+func (h *BookHandler) HandleBookByID(w http.ResponseWriter, r *http.Request) {
 	idStr := strings.TrimPrefix(r.URL.Path, "/books/")
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
